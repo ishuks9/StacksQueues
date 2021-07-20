@@ -22,6 +22,26 @@ public class Queue {
 			System.out.println("Stack has :");
 		}
 	}
+	
+	public void dequeue() {
+		if (size == 0) {
+			System.out.println("Queue is Empty so cant delete the element");
+		} else {
+			front++;
+			if (front == capacity - 1) {
+				int DeletedElement = array[front - 1];
+				System.out.println("Deleted Element :" + DeletedElement);
+				front = 0;
+			} else {
+				int DeletedElement = array[front - 1];
+				System.out.println("Deleted Element :" + DeletedElement);
+			}
+
+			size--;
+			rear--;
+		}
+
+	}
 
 	public boolean isFull() {
 		if (size == capacity) {
