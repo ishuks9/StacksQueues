@@ -1,10 +1,12 @@
 public class Stack{
 	
-	int capacity;
-	int [] array; 
-	int top; 
+	int capacity;//10 size of array
+	int [] array; //defining array
+	//T[]array;
+	int top; //-1
 	
-	public Stack(int size) {             
+	public Stack(int size) {             //parametorized constructor
+		array = new int [size];
 		this.capacity=size;
 		this.top=-1;
 	}
@@ -17,8 +19,25 @@ public class Stack{
 		}
 		
 		System.out.println("Inserting "+element+" to the stack");
-		array[++top]=element;              
+		array[++top]=element;              //preincrement 
+	} 
 	
+	public int pop() {
+		if (isEmpty()) {
+			System.out.println("Stack is empty and no space");
+			System.exit(1);
+		}
+		System.out.println("removing the value: "+array[top--]);
+		return array[top--];
+	}
+	
+	public int peek() {
+		if(isEmpty()) {
+			System.exit(1);
+		}else {
+			return array[top];
+		}
+		return -1;
 	}
 	
 	public boolean isEmpty() {
